@@ -13,6 +13,8 @@ const { getFriendRequests } = require("./models/user.model");
 const app = express();
 const server = require("http").createServer(app);
 const io = socketIO(server);
+
+require("./sockets/friend.socket")(io);
 io.on("connection", (socket) => {
   console.log("New user connected");
   require("./sockets/init.socket")(socket);
