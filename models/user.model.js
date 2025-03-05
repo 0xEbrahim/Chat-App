@@ -8,7 +8,10 @@ const userSchema = mongoose.Schema({
   username: String,
   email: String,
   password: String,
-  image: { type: String, default: "default-user-image.png" },
+  image: {
+    type: String,
+    default: "images/cute-blushing-boy-anime-discord-pfp-304ry32l6uz09ybd.jpg",
+  },
   friends: {
     type: [{ name: String, image: String, id: String, chatId: String }],
     default: [],
